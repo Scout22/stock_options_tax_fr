@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculateur de bénefice, Stock Option</title>
+
+</head>
+<body>
+<form action="/" method="post">
+    {{ form.csrf_token }}
+    <h2>Inscription Navigogo</h2>
+    <p>
+        {{form.stock_aquisition_price.label}}  {{ form.stock_aquisition_price }}
+     </p>
+        <p>
+        {{form.stock_qty.label}}  {{ form.stock_qty }}
+     </p>
+    <p>
+        {{form.stock_exercise_price.label}}  {{ form.stock_exercise_price }}
+     </p>
+    <p>
+        {{form.stock_sell_price.label}}  {{ form.stock_sell_price }}
+     </p>
+    <p>
+        {{form.gain_before_tax.label}}  {{ form.gain_before_tax }}
+     </p>
+    <p>
+        {{form.tax.label}}  {{ form.tax }}
+     </p>
+    <p>
+        {{form.gain_after_tax.label}}  {{ form.gain_after_tax }}
+     </p>
+    <p>
+        {% for message in form.errors %}
+        <span>{{ message }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.submit }}
+    </p>
+</form>
+</body>
+</html>
